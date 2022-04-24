@@ -4,7 +4,7 @@ import buildData from "../utils/buildData";
 //Constante URL de solicitud Token(key para solicictud de API)
 
 let CLIENT_ID = process.env.CLIENT_ID;
-let redirect_uri = 'http://localhost:5500/';
+let redirect_uri = 'https://spotify-clone-five-iota.vercel.app/';
 
 //Generamos una respuesta de autorizacion - GET
 export const getAuthorize= ()=> {
