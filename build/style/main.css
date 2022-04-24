@@ -1,0 +1,457 @@
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/login.css ***!
+  \************************************************************************/
+.login{
+    background: var(--primary);
+    inline-size: 100%;
+    block-size: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.login_container-drop{
+    position: relative;
+    inset-inline-start: -40%;
+    inline-size: 180%;
+    block-size: 100%;
+    box-shadow: 0 -100px 200px rgb(44, 70, 55, 1) inset; 
+}
+.icon-spotify_logo{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    inline-size: 20rem;
+    block-size: 10rem;
+    position: absolute;
+    inset-block-start: -60%;
+    font-size: 8rem;
+}
+.icon-spotify_logo::before{
+    color: rgb(255, 255, 255);
+}
+.icon-spotify_logo p{
+    font: var(--headLine);
+    color: rgb(255, 255, 255);
+    letter-spacing: -.1rem;
+}
+
+.login_main{
+    position: absolute;
+    inset-block-start: 35%;
+    inset-inline-start: 10%;
+    inline-size: 80%;
+    block-size: 20rem;
+    border-radius: .5rem;
+    background: var(--gray40);
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s;
+    cursor: pointer;
+}
+.login_main:hover{
+    background: var(--gray50);
+}
+.login_main:hover .login_button{
+    transform: scale(1.05);
+}
+.login_p{
+    font: var(--baseFont);
+    color: rgb(255, 255, 255);
+    margin: 0;
+    text-align: center;
+}
+
+.login_button{
+    inline-size: 10rem;
+    block-size: 3rem;
+    border-radius: 500px;
+    border: 2px solid rgb(255, 255, 255);
+    background: transparent;
+    font: var(--button);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/header.css ***!
+  \*************************************************************************/
+header {
+    display: flex;   
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 1rem;
+}
+.header_p{
+    font: var(--baseFontBold);
+    letter-spacing: -.1rem;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/playback.css ***!
+  \***************************************************************************/
+.playback {
+    margin-inline: 1rem;
+    background: var(--gray40);
+    border-radius: .4rem;
+    display: grid;
+    column-gap: .5rem;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr .2fr;
+    grid-template-areas: "img name fav state" "img device fav state" "progressMS progressMS progressMS progressMS";
+    align-items: center;
+    padding-inline: .4rem;
+    position: absolute;
+    inline-size: calc(100vw - 2.8rem);
+    inset-block-end: 10%;
+}
+
+.playback_img {
+    grid-area: img;
+    padding: .2rem;
+    border-radius: .5rem;
+}
+marquee{
+    grid-area: name;
+    align-self: flex-end;
+    overflow: hidden;
+}
+
+.playback_p {
+    font: var(--baseFontBold);
+    inline-size: 100%;
+    color: white;
+    margin: 0;    
+}
+
+.playback_progress-ms {
+    grid-area: progressMS;
+    background: white;
+    inline-size: 100%;
+    block-size: .18rem;
+    position: relative;
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+.playback_progress-back {
+    grid-area: progressMS;
+    background: var(--gray20);
+    inline-size: 100%;
+    block-size: .18rem;
+    border-radius: 1rem;
+}
+
+
+.playback_button {
+    background: transparent;
+    border: 0;
+    block-size: 2rem;
+    font-size: 100%;
+    cursor: pointer;
+    transition: all .1s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playback_button.fav{
+    grid-area: fav;
+}
+.playback_button.state{
+    grid-area: state;
+}
+.playback_button:active{
+    transform: scale(.9);
+}
+
+.playback_deviceCurrently{
+    grid-area: device;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .5rem;
+}
+.playback_deviceCurrently span{
+    font: var(--smallFont);
+    color: var(--primary);
+    
+}
+.icon-volume-up.playback--icon-device{
+    display: flex;
+    place-self: center;
+}
+.icon-volume-up.playback--icon-device::before{
+    font-size: .5rem;
+    color: var(--primary);
+    padding: .2rem;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+}
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/navegation.css ***!
+  \*****************************************************************************/
+nav{
+    position: absolute;
+    inline-size: 100%;
+    inset-block-end: 0;
+}
+.nav_ul{
+    margin: 0;
+    display:flex;
+    padding: 1rem;
+    justify-content: space-around;
+}
+.nav_li{
+    list-style: none;
+    block-size: 2.8rem;   
+    inline-size: 5rem;
+}
+.nav_button{
+    inline-size: 100%;
+    border: 0;
+    background: transparent;
+    block-size: 100%;   
+    transition: all .8s;
+    cursor: pointer;    
+}
+.nav_button:active{
+    transform: scale(1.1);
+}
+
+.nav_button i::before{
+    font-size: 1.2rem;
+}
+.nav_a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-between;
+    font-size: .7rem;
+    row-gap: .5rem;
+}
+/*!***********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/home.css ***!
+  \***********************************************************************/
+.main{
+    border: 1px solid red;
+    color: white;
+}
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/search.css ***!
+  \*************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/library.css ***!
+  \**************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/layout.css ***!
+  \*************************************************************************/
+.layout {
+    inline-size: 100%;
+    block-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 5fr 3.6rem .6fr; */
+    grid-template-rows: 1fr 5fr;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(350deg, rgba(0, 0, 0, 1) 86%, rgba(80, 40, 240, 0.915794516509434) 100%);
+}
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
+  \************************************************************************/
+@font-face {
+  font-family: Montserrat;
+  src: url(../assets/fonts/733964aa5261b1af4852.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../assets/fonts/e20d5327f1a05620c084.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #00B050;
+  --white: #FFFFFF;
+  --gray10: #B3B3B3;
+  --gray20: #737373;
+  --gray30: #282828;
+  --gray40: #181818;
+  --gray50: #121212;
+  --gray60: #000000;
+  --baseFontFamily: Montserrat, Helvetica, sans-serif;
+  --headLine: bold 2rem/normal var(--baseFontFamily);
+  --title: bold 1.5rem/1.75rem var(--baseFontFamily);
+  --baseFont: normal .875rem/1.375rem var(--baseFontFamily);
+  --baseFontBold: bold .875rem/1.375rem var(--baseFontFamily);
+  --button: normal .875rem/1rem var(--baseFontFamily);
+  --smallFont: bold .75em/normal var(--baseFontFamily);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  inline-size: 100%;
+  block-size: 100vh;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+}
+#app{
+  inline-size: 100%;
+  block-size: 100%;
+  
+}
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/iconmoon.css ***!
+  \***************************************************************************/
+@font-face {
+    font-family: 'icomoon';
+    src:  url(../assets/fonts/a7652e2374536e165435.eot?oyx91k);
+    src:  url(../assets/fonts/a7652e2374536e165435.eot?oyx91k#iefix) format('embedded-opentype'),
+      url(../assets/fonts/fd0b35190ff7c6177730.ttf?oyx91k) format('truetype'),
+      url(../assets/fonts/3cd5747cd782a3ad6578.woff?oyx91k) format('woff'),
+      url(../assets/svg/8bc3590185996406c57f.svg?oyx91k#icomoon) format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-spotify_logo:before {
+    content: "\e918";
+    color: #fff;
+  }
+  
+  .icon-add-plus:before {
+    content: "\e900";
+    color: #fff;
+  }
+  .icon-arrow-left:before {
+    content: "\e901";
+    color: #fff;
+  }
+  .icon-arrow-right:before {
+    content: "\e902";
+    color: #fff;
+  }
+  .icon-calendar:before {
+    content: "\e903";
+    color: #fff;
+  }
+  .icon-clock:before {
+    content: "\e904";
+    color: #fff;
+  }
+  .icon-close:before {
+    content: "\e905";
+    color: #fff;
+  }
+  .icon-download:before {
+    content: "\e906";
+    color: #fff;
+  }
+  .icon-fav-true:before {
+    content: "\e907";
+    color: #00B050;
+  }
+  .icon-fav-false:before {
+    content: "\e907";
+    color: #fff;
+  }
+  .icon-home:before {
+    content: "\e908";
+    color: #fff;
+  }
+  .icon-home-white:before {
+    content: "\e909";
+    color: #fff;
+  }
+  .icon-library:before {
+    content: "\e90a";
+    color: #fff;
+  }
+  .icon-library-slim:before {
+    content: "\e90b";
+    color: #fff;
+  }
+  .icon-min-screen:before {
+    content: "\e90c";
+    color: #fff;
+  }
+  .icon-music:before {
+    content: "\e90d";
+    color: #fff;
+  }
+  .icon-next:before {
+    content: "\e90e";
+    color: #b3b3b3;
+  }
+  .icon-pause:before {
+    content: "\e90f";
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  .icon-play:before {
+    content: "\e910";
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  .icon-prev:before {
+    content: "\e911";
+    color: #b3b3b3;
+  }
+  .icon-round:before {
+    content: "\e912";
+    color: #fff;
+  }
+  .icon-search:before {
+    content: "\e913";
+    color: #fff;
+  }
+  .icon-search-slim:before {
+    content: "\e914";
+    color: #fff;
+  }
+  .icon-volume-down:before {
+    content: "\e915";
+    color: #fff;
+  }
+  .icon-volume-off:before {
+    content: "\e916";
+    color: #fff;
+  }
+  .icon-volume-up:before {
+    content: "\e917";
+    color: #b3b3b3;
+  }

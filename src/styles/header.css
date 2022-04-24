@@ -1,0 +1,22 @@
+header {
+    display: flex;   
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 1rem;
+}
+.header_profile{
+    display: flex;
+    align-items: center;
+    column-gap: .8rem;
+}
+.header_p{
+    font: var(--baseFontBold);
+    letter-spacing: -.1rem;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.header_img{
+    border-radius: 50%;
+}
