@@ -6,6 +6,8 @@ import buildData from "../utils/buildData";
 let CLIENT_ID = process.env.CLIENT_ID;
 let redirect_uri = 'http://localhost:5500/';
 
+console.log(CLIENT_ID)
+
 //Generamos una respuesta de autorizacion - GET
 export const getAuthorize= ()=> {
 
