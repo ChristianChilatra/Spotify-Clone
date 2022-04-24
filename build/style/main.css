@@ -1,6 +1,3 @@
-/*!************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/login.css ***!
-  \************************************************************************/
 .login{
     background: var(--primary);
     inline-size: 100%;
@@ -78,14 +75,16 @@
     cursor: pointer;
     transition: all 0.2s;
 }
-/*!*************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/header.css ***!
-  \*************************************************************************/
 header {
     display: flex;   
     justify-content: flex-start;
     align-items: flex-end;
     padding: 1rem;
+}
+.header_profile{
+    display: flex;
+    align-items: center;
+    column-gap: .8rem;
 }
 .header_p{
     font: var(--baseFontBold);
@@ -94,28 +93,30 @@ header {
     font-size: 1.5rem;
     margin: 0;
 }
-/*!***************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/playback.css ***!
-  \***************************************************************************/
+
+.header_img{
+    border-radius: 50%;
+}
 .playback {
     margin-inline: 1rem;
     background: var(--gray40);
     border-radius: .4rem;
     display: grid;
     column-gap: .5rem;
-    grid-template-columns: 1fr 5fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr .2fr;
-    grid-template-areas: "img name fav state" "img device fav state" "progressMS progressMS progressMS progressMS";
+    grid-template-areas: "img name iconDevice fav state" "img device iconDevice fav state" "progressMS progressMS progressMS progressMS progressMS";
     align-items: center;
     padding-inline: .4rem;
     position: absolute;
     inline-size: calc(100vw - 2.8rem);
     inset-block-end: 10%;
+    transition: all .5s;
 }
 
 .playback_img {
     grid-area: img;
-    padding: .2rem;
+    padding: .4rem;
     border-radius: .5rem;
 }
 marquee{
@@ -172,6 +173,14 @@ marquee{
     transform: scale(.9);
 }
 
+.playback_button.device{
+    grid-area: iconDevice;
+}
+
+.icon-device::before{
+    font-size: 1.2rem;
+}
+
 .playback_deviceCurrently{
     grid-area: device;
     display: flex;
@@ -195,41 +204,102 @@ marquee{
     border: 1px solid var(--primary);
     border-radius: 50%;
 }
-/*!*****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/navegation.css ***!
-  \*****************************************************************************/
-nav{
+
+.playback-dialog{
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: calc(100% - 2rem);
+    block-size: 100%;
+    background: black;
+    margin: 0;
+    padding: 1rem;
+    z-index: 1;
+}
+.playback-dialog_container{
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    block-size: 100%;
+}
+.icon-close.dialog{
+    inline-size: 2rem;
+    block-size: 2rem;
+    place-self: flex-end;
+}
+.icon-close.dialog::before{
+    font-size: 2rem;
+}
+
+.playback-dialog-devices{
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.playback-dialog-devices h2{
+    color: white;
+    font: var(--title);
+    margin: 0;
+}
+
+.playback-dialog-devices h3{
+    color: white;
+    font: var(--baseFontBold);
+    margin: 0;
+}
+
+.playback-dialog_p-currently-device{
+    color: #00B050;
+    font: var(--baseFont);
+    margin: 0 0 0 1rem;
+    display: inline-block;
+}
+
+.playback-dialog_p-device{
+    color: white;
+    font: var(--baseFont);
+    margin: 0 0 0 1rem;
+}
+nav {
     position: absolute;
     inline-size: 100%;
     inset-block-end: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 75%, rgba(255, 255, 255, 0) 100%);
 }
-.nav_ul{
+
+.nav_ul {
     margin: 0;
-    display:flex;
+    display: flex;
     padding: 1rem;
     justify-content: space-around;
 }
-.nav_li{
+
+.nav_li {
     list-style: none;
-    block-size: 2.8rem;   
+    block-size: 2.8rem;
     inline-size: 5rem;
 }
-.nav_button{
+
+.nav_button {
     inline-size: 100%;
     border: 0;
     background: transparent;
-    block-size: 100%;   
+    block-size: 100%;
     transition: all .8s;
-    cursor: pointer;    
+    cursor: pointer;
 }
-.nav_button:active{
+
+.nav_button:active {
     transform: scale(1.1);
 }
 
-.nav_button i::before{
+.nav_button i::before {
     font-size: 1.2rem;
 }
-.nav_a{
+
+.nav_a {
     text-decoration: none;
     color: white;
     display: flex;
@@ -239,37 +309,175 @@ nav{
     font-size: .7rem;
     row-gap: .5rem;
 }
-/*!***********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/home.css ***!
-  \***********************************************************************/
 .main{
     border: 1px solid red;
     color: white;
 }
-/*!*************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/search.css ***!
-  \*************************************************************************/
+.section-search_container-input{
+    block-size: 2.5rem;
+    align-items: center;
+    gap: 0.2rem;
+    background: white;
+    margin-inline: 1rem;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.section-search .icon-search::before{
+    color: black;
+    font-size: 1.5rem;
+}
 
-/*!**************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/library.css ***!
-  \**************************************************************************/
+.section-search_input{
+    border: 0;
+    inline-size: calc(100% - 4rem);
+    font: var(--smallFont);
+    block-size: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+.section-search_results{
+    block-size: 100vh;
+    padding: 1rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
 
-/*!*************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/layout.css ***!
-  \*************************************************************************/
+.section-search_results-loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 100%;
+}
+
+.section-search_results-loader h2{
+    color: var(--gray10);
+    font: var(--baseFontBold);
+}
+
+.section-library {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    overflow: auto;
+    position: relative;
+}
+
+.section-library_item {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas: "img name fav" "img artist fav";
+    padding: 0 1rem;
+    align-items: center;
+    transition: all .2s;
+}
+
+.section-library_item:active {
+    transform: scale(.95);
+}
+
+.section-library_img {
+    grid-area: img;
+    border-radius: .2rem;
+}
+
+.section-library_p {
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.section-library_p.name {
+    grid-area: name;
+    font: var(--baseFontBold);
+}
+
+.section-library_p.artist {
+    color: var(--gray10);
+    grid-area: artist;
+    font: var(--smallFont);
+    font-weight: lighter;
+    place-self: start;
+}
+
+.section-library--modal-playback {
+    position: relative;
+    inline-size: 100%;
+    block-size: 100%;
+    grid-area: 1/1/-1/3;
+    cursor: pointer;
+}
+
+.colaider {
+    inline-size: auto;
+    block-size: 40rem;
+}
+
+/*****************************LOADER*****************************/
+.loader-library {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--gray10);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--gray10) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .layout {
     inline-size: 100%;
     block-size: 100%;
     display: grid;
     grid-template-columns: 1fr;
     /* grid-template-rows: 1fr 5fr 3.6rem .6fr; */
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 6rem auto;
     background: rgb(0, 0, 0);
     background: linear-gradient(350deg, rgba(0, 0, 0, 1) 86%, rgba(80, 40, 240, 0.915794516509434) 100%);
 }
-/*!************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
-  \************************************************************************/
 @font-face {
   font-family: Montserrat;
   src: url(../assets/fonts/733964aa5261b1af4852.ttf);
@@ -299,7 +507,7 @@ nav{
   --baseFont: normal .875rem/1.375rem var(--baseFontFamily);
   --baseFontBold: bold .875rem/1.375rem var(--baseFontFamily);
   --button: normal .875rem/1rem var(--baseFontFamily);
-  --smallFont: bold .75em/normal var(--baseFontFamily);
+  --smallFont:  .75em/normal var(--baseFontFamily);
 }
 
 body {
@@ -316,16 +524,13 @@ body {
   block-size: 100%;
   
 }
-/*!***************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/iconmoon.css ***!
-  \***************************************************************************/
 @font-face {
     font-family: 'icomoon';
-    src:  url(../assets/fonts/a7652e2374536e165435.eot?oyx91k);
-    src:  url(../assets/fonts/a7652e2374536e165435.eot?oyx91k#iefix) format('embedded-opentype'),
-      url(../assets/fonts/fd0b35190ff7c6177730.ttf?oyx91k) format('truetype'),
-      url(../assets/fonts/3cd5747cd782a3ad6578.woff?oyx91k) format('woff'),
-      url(../assets/svg/8bc3590185996406c57f.svg?oyx91k#icomoon) format('svg');
+    src:  url(../assets/fonts/618149f639bedb142608.eot?oyx91k);
+    src:  url(../assets/fonts/618149f639bedb142608.eot?oyx91k#iefix) format('embedded-opentype'),
+      url(../assets/fonts/1167d3222087ec19de51.ttf?oyx91k) format('truetype'),
+      url(../assets/fonts/ceb98828fa684f4dd0df.woff?oyx91k) format('woff'),
+      url(../assets/svg/661f51ec3f002f8a50ce.svg?oyx91k#icomoon) format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -346,11 +551,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .icon-spotify_logo:before {
-    content: "\e918";
+  .icon-mobile:before {
+    content: "\e91a";
     color: #fff;
   }
-  
+  .icon-portatil:before {
+    content: "\e91b";
+    color: #fff;
+  }
   .icon-add-plus:before {
     content: "\e900";
     color: #fff;
@@ -379,13 +587,13 @@ body {
     content: "\e906";
     color: #fff;
   }
-  .icon-fav-true:before {
-    content: "\e907";
-    color: #00B050;
-  }
   .icon-fav-false:before {
     content: "\e907";
     color: #fff;
+  }
+  .icon-fav-true:before {
+    content: "\e907";
+    color: #00B050;
   }
   .icon-home:before {
     content: "\e908";
@@ -395,63 +603,67 @@ body {
     content: "\e909";
     color: #fff;
   }
-  .icon-library:before {
+  .icon-device:before {
     content: "\e90a";
     color: #fff;
   }
-  .icon-library-slim:before {
+  .icon-library:before {
     content: "\e90b";
     color: #fff;
   }
-  .icon-min-screen:before {
+  .icon-library-slim:before {
     content: "\e90c";
     color: #fff;
   }
-  .icon-music:before {
+  .icon-min-screen:before {
     content: "\e90d";
     color: #fff;
   }
-  .icon-next:before {
+  .icon-music:before {
     content: "\e90e";
+    color: #fff;
+  }
+  .icon-next:before {
+    content: "\e90f";
     color: #b3b3b3;
   }
   .icon-pause:before {
-    content: "\e90f";
-    color: #fff;
-    display: flex;
-    justify-content: center;
-  }
-  .icon-play:before {
     content: "\e910";
     color: #fff;
-    display: flex;
-    justify-content: center;
+  }
+  .icon-play:before {
+    content: "\e911";
+    color: #fff;
   }
   .icon-prev:before {
-    content: "\e911";
+    content: "\e912";
     color: #b3b3b3;
   }
   .icon-round:before {
-    content: "\e912";
-    color: #fff;
-  }
-  .icon-search:before {
     content: "\e913";
     color: #fff;
   }
-  .icon-search-slim:before {
+  .icon-search:before {
     content: "\e914";
     color: #fff;
   }
-  .icon-volume-down:before {
+  .icon-search-slim:before {
     content: "\e915";
     color: #fff;
   }
-  .icon-volume-off:before {
+  .icon-spotify_logo:before {
     content: "\e916";
     color: #fff;
   }
-  .icon-volume-up:before {
+  .icon-volume-down:before {
     content: "\e917";
+    color: #fff;
+  }
+  .icon-volume-off:before {
+    content: "\e918";
+    color: #fff;
+  }
+  .icon-volume-up:before {
+    content: "\e919";
     color: #b3b3b3;
   }
