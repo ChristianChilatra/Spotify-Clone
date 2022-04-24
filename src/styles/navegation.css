@@ -1,0 +1,48 @@
+nav {
+    position: absolute;
+    inline-size: 100%;
+    inset-block-end: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+.nav_ul {
+    margin: 0;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+}
+
+.nav_li {
+    list-style: none;
+    block-size: 2.8rem;
+    inline-size: 5rem;
+}
+
+.nav_button {
+    inline-size: 100%;
+    border: 0;
+    background: transparent;
+    block-size: 100%;
+    transition: all .8s;
+    cursor: pointer;
+}
+
+.nav_button:active {
+    transform: scale(1.1);
+}
+
+.nav_button i::before {
+    font-size: 1.2rem;
+}
+
+.nav_a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-between;
+    font-size: .7rem;
+    row-gap: .5rem;
+}

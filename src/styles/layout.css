@@ -1,0 +1,10 @@
+.layout {
+    inline-size: 100%;
+    block-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 5fr 3.6rem .6fr; */
+    grid-template-rows: 6rem auto;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(350deg, rgba(0, 0, 0, 1) 86%, rgba(80, 40, 240, 0.915794516509434) 100%);
+}

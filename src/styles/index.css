@@ -1,0 +1,48 @@
+@import url(./iconmoon.css);
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../assets/fonts/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../assets/fonts/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #00B050;
+  --white: #FFFFFF;
+  --gray10: #B3B3B3;
+  --gray20: #737373;
+  --gray30: #282828;
+  --gray40: #181818;
+  --gray50: #121212;
+  --gray60: #000000;
+  --baseFontFamily: Montserrat, Helvetica, sans-serif;
+  --headLine: bold 2rem/normal var(--baseFontFamily);
+  --title: bold 1.5rem/1.75rem var(--baseFontFamily);
+  --baseFont: normal .875rem/1.375rem var(--baseFontFamily);
+  --baseFontBold: bold .875rem/1.375rem var(--baseFontFamily);
+  --button: normal .875rem/1rem var(--baseFontFamily);
+  --smallFont:  .75em/normal var(--baseFontFamily);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  inline-size: 100%;
+  block-size: 100vh;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+}
+#app{
+  inline-size: 100%;
+  block-size: 100%;
+  
+}

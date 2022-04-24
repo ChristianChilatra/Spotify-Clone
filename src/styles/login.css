@@ -1,0 +1,77 @@
+.login{
+    background: var(--primary);
+    inline-size: 100%;
+    block-size: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.login_container-drop{
+    position: relative;
+    inset-inline-start: -40%;
+    inline-size: 180%;
+    block-size: 100%;
+    box-shadow: 0 -100px 200px rgb(44, 70, 55, 1) inset; 
+}
+.icon-spotify_logo{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    inline-size: 20rem;
+    block-size: 10rem;
+    position: absolute;
+    inset-block-start: -60%;
+    font-size: 8rem;
+}
+.icon-spotify_logo::before{
+    color: rgb(255, 255, 255);
+}
+.icon-spotify_logo p{
+    font: var(--headLine);
+    color: rgb(255, 255, 255);
+    letter-spacing: -.1rem;
+}
+
+.login_main{
+    position: absolute;
+    inset-block-start: 35%;
+    inset-inline-start: 10%;
+    inline-size: 80%;
+    block-size: 20rem;
+    border-radius: .5rem;
+    background: var(--gray40);
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s;
+    cursor: pointer;
+}
+.login_main:hover{
+    background: var(--gray50);
+}
+.login_main:hover .login_button{
+    transform: scale(1.05);
+}
+.login_p{
+    font: var(--baseFont);
+    color: rgb(255, 255, 255);
+    margin: 0;
+    text-align: center;
+}
+
+.login_button{
+    inline-size: 10rem;
+    block-size: 3rem;
+    border-radius: 500px;
+    border: 2px solid rgb(255, 255, 255);
+    background: transparent;
+    font: var(--button);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.2s;
+}

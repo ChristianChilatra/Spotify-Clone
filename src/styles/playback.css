@@ -1,0 +1,164 @@
+.playback {
+    margin-inline: 1rem;
+    background: var(--gray40);
+    border-radius: .4rem;
+    display: grid;
+    column-gap: .5rem;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr .2fr;
+    grid-template-areas: "img name iconDevice fav state" "img device iconDevice fav state" "progressMS progressMS progressMS progressMS progressMS";
+    align-items: center;
+    padding-inline: .4rem;
+    position: absolute;
+    inline-size: calc(100vw - 2.8rem);
+    inset-block-end: 10%;
+    transition: all .5s;
+}
+
+.playback_img {
+    grid-area: img;
+    padding: .4rem;
+    border-radius: .5rem;
+}
+marquee{
+    grid-area: name;
+    align-self: flex-end;
+    overflow: hidden;
+}
+
+.playback_p {
+    font: var(--baseFontBold);
+    inline-size: 100%;
+    color: white;
+    margin: 0;    
+}
+
+.playback_progress-ms {
+    grid-area: progressMS;
+    background: white;
+    inline-size: 100%;
+    block-size: .18rem;
+    position: relative;
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+.playback_progress-back {
+    grid-area: progressMS;
+    background: var(--gray20);
+    inline-size: 100%;
+    block-size: .18rem;
+    border-radius: 1rem;
+}
+
+
+.playback_button {
+    background: transparent;
+    border: 0;
+    block-size: 2rem;
+    font-size: 100%;
+    cursor: pointer;
+    transition: all .1s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playback_button.fav{
+    grid-area: fav;
+}
+.playback_button.state{
+    grid-area: state;
+}
+.playback_button:active{
+    transform: scale(.9);
+}
+
+.playback_button.device{
+    grid-area: iconDevice;
+}
+
+.icon-device::before{
+    font-size: 1.2rem;
+}
+
+.playback_deviceCurrently{
+    grid-area: device;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .5rem;
+}
+.playback_deviceCurrently span{
+    font: var(--smallFont);
+    color: var(--primary);
+    
+}
+.icon-volume-up.playback--icon-device{
+    display: flex;
+    place-self: center;
+}
+.icon-volume-up.playback--icon-device::before{
+    font-size: .5rem;
+    color: var(--primary);
+    padding: .2rem;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+}
+
+.playback-dialog{
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: calc(100% - 2rem);
+    block-size: 100%;
+    background: black;
+    margin: 0;
+    padding: 1rem;
+    z-index: 1;
+}
+.playback-dialog_container{
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    block-size: 100%;
+}
+.icon-close.dialog{
+    inline-size: 2rem;
+    block-size: 2rem;
+    place-self: flex-end;
+}
+.icon-close.dialog::before{
+    font-size: 2rem;
+}
+
+.playback-dialog-devices{
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.playback-dialog-devices h2{
+    color: white;
+    font: var(--title);
+    margin: 0;
+}
+
+.playback-dialog-devices h3{
+    color: white;
+    font: var(--baseFontBold);
+    margin: 0;
+}
+
+.playback-dialog_p-currently-device{
+    color: #00B050;
+    font: var(--baseFont);
+    margin: 0 0 0 1rem;
+    display: inline-block;
+}
+
+.playback-dialog_p-device{
+    color: white;
+    font: var(--baseFont);
+    margin: 0 0 0 1rem;
+}
