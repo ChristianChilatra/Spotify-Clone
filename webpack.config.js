@@ -74,8 +74,4 @@ module.exports = {
             filename: "./style/[name].css",
         }),
     ],
-    devServer: {
-        static: path.join(__dirname, 'build'),
-        historyApiFallback: true,
-      },
 }
