@@ -9,7 +9,7 @@ let redirect_uri = 'https://spotify-clone-five-iota.vercel.app/';
 //Generamos una respuesta de autorizacion - GET
 export const getAuthorize= ()=> {
 
-    const URL_AUTHORIZE = 'https://accounts.spotify.com/authorize';
+    const URL_AUTHORIZE = 'https://eclectic-tarsier-d8552b.netlify.app/';
 
     const data = {
         'response_type':'token',
