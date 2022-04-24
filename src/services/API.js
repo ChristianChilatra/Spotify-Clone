@@ -3,8 +3,8 @@
 import buildData from "../utils/buildData";
 //Constante URL de solicitud Token(key para solicictud de API)
 
-let CLIENT_ID = process.env.CLIENT_ID;
-let redirect_uri = 'https://spotify-clone-five-iota.vercel.app/';
+let client_id = "6ec8ad6efe6c4c538f92472dc49c1a87";
+let redirect_uri = 'http://127.0.0.1:5501/';
 
 //Generamos una respuesta de autorizacion - GET
 export const getAuthorize= ()=> {
@@ -13,7 +13,7 @@ export const getAuthorize= ()=> {
 
     const data = {
         'response_type':'token',
-        'client_id':CLIENT_ID,
+        'client_id':client_id,
         'scope':'user-modify-playback-state+user-read-private+user-read-email+streaming+user-library-read+user-library-modify+user-read-playback-state+user-read-currently-playing',
         'redirect_uri':redirect_uri,
     }
