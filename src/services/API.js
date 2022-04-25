@@ -6,6 +6,8 @@ import buildData from "../utils/buildData";
 let client_id = process.env.CLIENT_ID;
 let redirect_uri = 'https://spotify-clone-five-iota.vercel.app/';
 
+console.log(client_id)
+
 //Generamos una respuesta de autorizacion - GET
 export const getAuthorize= ()=> {
 
