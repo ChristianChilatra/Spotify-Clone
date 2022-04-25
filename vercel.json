@@ -9,10 +9,5 @@
             "destination": "/"
         }
     ],
-    "cleanUrls": true,
-    "build": {
-        "env": {
-          "CLIENT_ID": "6ec8ad6efe6c4c538f92472dc49c1a87"
-        }
-      }
+    "cleanUrls": true
 }
