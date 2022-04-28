@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUserSaveTracks, checkSavedTrack } from "../services/getDataAPI";
+import { getUserSaveTracks, checkSavedTrack, getDeviceList } from "../services/getDataAPI";
 import { setAddTrack, setDeleteTrack, setStartTrack } from "../services/setDataAPI";
 
 import '../styles/library.css'
@@ -42,7 +42,7 @@ export default function Library({ token, device }) {
 
                 const resultTracks = await getUserSaveTracks(varOffset, countPlayList, token)
                 const result = await Promise.all(
-                    resultTracks.items.map( async x => {
+                    resultTracks.items.map(async x => {
 
                         const checkIsFav = await checkSavedTrack(x.track.id, token)
 
@@ -74,7 +74,7 @@ export default function Library({ token, device }) {
 
             setListTrack(listTrack => listTrack.filter(element => element.id != event.target.parentElement.id))
         },
-        addTrack : (event) => {
+        addTrack: (event) => {
             setAddTrack(event.target.parentElement.id, token)
 
             setListTrack(listTrack => listTrack.filter(element => element.id != event.target.parentElement.id))
@@ -82,18 +82,24 @@ export default function Library({ token, device }) {
     }
 
     const eventStart = {
-        startPlayback: (event) => {
+        startPlayback: async (event) => {
 
             const resultFilter = listTrack.filter(element => element.id === event.target.id)
             const resultIndexOf = listTrack.indexOf(...resultFilter)
             const newArray = listTrack.filter((element, index) => index >= resultIndexOf)
             const resultMap = newArray.map(element => element.uri)
 
-            setStartTrack(device, resultMap, token)
+            const resultDeviceList = await getDeviceList(token)
+            const result = resultDeviceList.devices.find(element => element.is_active)
+
+            if (result) {
+                setStartTrack(result.id, resultMap, token)
+            } else {
+                setStartTrack(device, resultMap, token)
+            }
         }
     }
-
-    if(listTrack != ""){
+    if (listTrack != "") {
         return (
             <section className="section-library">
                 {
@@ -103,8 +109,8 @@ export default function Library({ token, device }) {
                                 <img className="section-library_img" src={element.img} alt="img album" width={40} />
                                 <p className="section-library_p name">{element.name}</p>
                                 <p className="section-library_p artist">{element.artists}</p>
-                                <button className="playback_button fav" id={element.id} onClick={element.isFav ? eventFav.deleteTrack : eventFav.addTrack} OnTouchStart={element.isFav ? eventFav.deleteTrack : eventFav.addTrack} ><i className={element.isFav ? 'icon-fav-true' : 'icon-fav-false'}></i></button>
-                                <div className="section-library--modal-playback" id={element.id} onClick={eventStart.startPlayback} OnTouchStart={eventStart.startPlayback}></div>
+                                <button className="playback_button fav" id={element.id} onClick={element.isFav ? eventFav.deleteTrack : eventFav.addTrack} ><i className={element.isFav ? 'icon-fav-true' : 'icon-fav-false'}></i></button>
+                                <div className="section-library--modal-playback" id={element.id} onClick={eventStart.startPlayback}></div>
                             </div>
                         )
                     })
@@ -112,7 +118,7 @@ export default function Library({ token, device }) {
                 <div className="colaider"></div>
             </section>
         )
-    }else{
+    } else {
         return (
             <div className="loader-library">
                 <div className="lds-ring"><div></div><div></div><div></div><div></div></div>

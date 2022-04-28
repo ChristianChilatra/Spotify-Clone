@@ -99,8 +99,8 @@ export default function Search({ device, token }) {
                                     <img className="section-library_img" src={element.img} alt="img album" width={40} />
                                     <p className="section-library_p name">{element.name}</p>
                                     <p className="section-library_p artist">{element.artists}</p>
-                                    <button className="playback_button fav" id={element.id} onClick={element.isFav ? eventFav.deleteTrack : eventFav.addTrack} OnTouchStart={element.isFav ? eventFav.deleteTrack : eventFav.addTrack} ><i className={element.isFav ? 'icon-fav-true' : 'icon-fav-false'}></i></button>
-                                    <div className="section-library--modal-playback" id={element.uri} onClick={eventStart.startPlayback} OnTouchStart={eventStart.startPlayback}></div>
+                                    <button className="playback_button fav" id={element.id} onClick={element.isFav ? eventFav.deleteTrack : eventFav.addTrack} ><i className={element.isFav ? 'icon-fav-true' : 'icon-fav-false'}></i></button>
+                                    <div className="section-library--modal-playback" id={element.uri} onClick={eventStart.startPlayback} ></div>
                                 </div>
                             )
                         })

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { getToken } from "../services/API";
 import { Routes, Route } from "react-router";
 import Context from "../contexts/staticContext";
@@ -15,9 +15,8 @@ export default function Layout() {
 
     const [deviceId, setDeviceId] = useState('')
     const [header, setHeader] = useState(location.pathname)
-
     const token = getToken()
-
+        
     window.onSpotifyWebPlaybackSDKReady = () => {
 
         const player = new Spotify.Player({

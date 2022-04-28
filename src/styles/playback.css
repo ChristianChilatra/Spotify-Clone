@@ -9,9 +9,9 @@
     grid-template-areas: "img name iconDevice fav state" "img device iconDevice fav state" "progressMS progressMS progressMS progressMS progressMS";
     align-items: center;
     padding-inline: .4rem;
-    position: absolute;
+    position: fixed;
     inline-size: calc(100vw - 2.8rem);
-    inset-block-end: 10%;
+    inset-block-end: 8%;
     transition: all .5s;
 }
 

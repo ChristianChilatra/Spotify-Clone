@@ -5,6 +5,12 @@ import Context from "../contexts/staticContext";
 
 export default function Navegation({ hashPage }) {
 
+    window.onresize = ()=>{
+       const nav = document.querySelector("nav")
+       nav.style.insetBlockEnd = "0px"
+    }
+
+
     const {header, setHeader} = useContext(Context)
 
     const setHeaderHome = ()=>{

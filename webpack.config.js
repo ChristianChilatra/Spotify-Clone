@@ -77,7 +77,6 @@ module.exports = {
             filename: "./style/[name].css",
         }),
         new Dotenv({
-            path: "./.env"
         })
     ],
 }
