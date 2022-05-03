@@ -8,6 +8,9 @@ let client_id = process.env.CLIENT_ID;
 // let redirect_uri = 'http://localhost:5500/';
 let redirect_uri = 'https://spotify-clone-five-iota.vercel.app/';
 
+console.log(process.env.CLIENT_ID);
+console.log(process.env.CLIENT_ID2);
+
 //Generamos una respuesta de autorizacion - GET
 export const getAuthorize= ()=> {
 
